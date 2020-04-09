@@ -1,0 +1,26 @@
+server:
+  port: 8080
+spring:
+  profiles: default
+  application:
+    name: Oauth2 Auth Service
+  datasource:
+    url: jdbc:h2:mem:wu_auth_db
+    driverClassName: org.h2.Driver
+    username: rk
+    password: password
+    jpa:
+      hibernate:
+        ddl-auto: none
+      show-sql: true
+    h2:
+      console:
+        enabled: true
+        settings:
+          web-allow-others: true
+auth:
+  jwt:
+    key-store: classpath:rk-keystore.jks
+    key-store-password: changeit
+    key-pair-alias: rkcert
+    key-pair-password: changeit
